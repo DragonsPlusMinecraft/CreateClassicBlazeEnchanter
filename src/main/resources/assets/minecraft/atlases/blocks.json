@@ -1,0 +1,8 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "create_classic_blaze_enchanter:block/blaze_enchanter_book"
+    }
+  ]
+}

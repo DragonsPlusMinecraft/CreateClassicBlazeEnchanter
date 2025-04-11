@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "create_classic_blaze_enchanter:classic_blaze_enchanter"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "create_classic_blaze_enchanter:blocks/classic_blaze_enchanter"
+}

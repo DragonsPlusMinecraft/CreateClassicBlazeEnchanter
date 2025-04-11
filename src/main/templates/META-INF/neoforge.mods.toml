@@ -1,0 +1,60 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="${mod_github}/issues"
+
+[[mods]]
+    modId="${mod_id}"
+    version="${mod_version}"
+    displayName="${mod_name}"
+    displayURL="${mod_github}"
+    logoFile="icon.png"
+    #credits=""
+    authors="${mod_authors}"
+    description='''${mod_description}'''
+
+[[mixins]]
+    config="${mod_id}.mixins.json"
+
+#[[accessTransformers]]
+    #file="META-INF/accesstransformer.cfg"
+
+[modproperties.${mod_id}]
+    "create_dragons_plus:dye_fluids"=true
+    "create_dragons_plus:fluid_hatch"=true
+    "create_dragons_plus:blaze_upgrade_smithing_template"=true
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="${neo_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="required"
+    versionRange="${create_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create_dragons_plus"
+    type="required"
+    versionRange="${create_dragons_plus_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create_enchantment_industry"
+    type="required"
+    versionRange="${create_enchantment_industry_version_range}"
+    ordering="NONE"
+    side="BOTH"
