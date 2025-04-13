@@ -126,7 +126,7 @@ public class ClassicEnchanterBlockVisual extends AbstractBlockEntityVisual<Class
         float seededRenderTime = renderTime + (seed % 13) * 16f;
         float offsetScale = heatLevel.isAtLeast(BlazeBurnerBlock.HeatLevel.FADING) ? 64 : 16;
         float offset = Mth.sin((seededRenderTime / 16f) % (2 * Mth.PI)) / offsetScale;
-        float headY = offset - (animation * .75f) + 0.15f;
+        float headY = offset - (animation * .75f) + 0.2f;
         float horizontalAngle = AngleHelper.rad(blockEntity.headAngle().getValue(partialTicks));
 
         head.setIdentityTransform()
@@ -164,7 +164,7 @@ public class ClassicEnchanterBlockVisual extends AbstractBlockEntityVisual<Class
         goggles.setIdentityTransform()
                 .translate(getVisualPosition())
                 .rotateCentered(horizontalAngle, Direction.UP)
-                .translateY(headY + .2f)
+                .translateY(headY + 0.2f)
                 .setChanged();
     }
 

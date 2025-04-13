@@ -1,5 +1,6 @@
 package plus.dragons.createclassicblazeenchanter.common.processing.enchanter;
 
+import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.behaviour.BehaviourType;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import com.simibubi.create.foundation.blockEntity.behaviour.filtering.FilteringBehaviour;
@@ -28,7 +29,7 @@ import plus.dragons.createenchantmentindustry.util.CEILang;
 
 import java.util.List;
 
-public class ClassicEnchanterBehavior extends FilteringBehaviour {
+public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHaveGoggleInformation {
     public static final BehaviourType<ClassicEnchanterBehavior> TYPE = new BehaviourType<>();
     private final ClassicBlazeEnchanterBlockEntity enchanter;
 
@@ -130,9 +131,13 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour {
         return false;
     }
 
+    @Override
     public boolean addToGoggleTooltip(List<Component> tooltip, boolean isPlayerSneaking) {
         if (!filter.isEmpty()) {
-            CCBELang.translate("gui.goggles.classic_enchanting.available_target").forGoggles(tooltip);
+            if(EnchantmentHelper.getEnchantmentsForCrafting(filter.item()).size()>1)
+                CCBELang.translate("gui.goggles.classic_enchanting.available_targets").forGoggles(tooltip);
+            else
+                CCBELang.translate("gui.goggles.classic_enchanting.available_target").forGoggles(tooltip);
             var style = enchanter.special
                     ? (enchanter.cursed ? ChatFormatting.RED : ChatFormatting.BLUE)
                     : ChatFormatting.GOLD;
