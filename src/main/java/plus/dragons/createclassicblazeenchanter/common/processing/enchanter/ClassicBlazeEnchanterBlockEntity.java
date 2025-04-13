@@ -5,6 +5,7 @@ import com.simibubi.create.AllBlocks;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
+import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
 import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.math.AngleHelper;
@@ -31,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createdragonsplus.common.advancements.AdvancementBehaviour;
 import plus.dragons.createdragonsplus.common.fluids.tank.ConfigurableFluidTank;
+import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlockEntity;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.BlazeExperienceBlockEntity;
 import plus.dragons.createenchantmentindustry.common.registry.CEIFluids;
 
@@ -55,7 +57,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     }
 
     public LerpedFloat headAngle(){
-        return this.headAngle;
+        return ((BlazeBlockEntity)this).headAngle;
     }
 
     public @Nullable IFluidHandler getFluidHandler(@Nullable Direction side) {
@@ -189,6 +191,16 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
 
     }
 
+    @Override
+    public @Nullable PartialModel getGogglesModel(BlazeBurnerBlock.HeatLevel heatLevel) {
+        return super.getGogglesModel(heatLevel);
+    }
+
+    @Override
+    public void tickAnimation() {
+        super.tickAnimation();
+    }
+
     protected void bookTick() {
         if (level.random.nextInt(40) == 0) {
             float oFlipT = flipT;
@@ -232,6 +244,10 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     protected void read(CompoundTag compound, HolderLookup.Provider registries, boolean clientPacket) {
         super.read(compound, registries, clientPacket);
         this.processingTime = compound.getInt("ProcessingTime");
+    }
+
+    public LerpedFloat headAnimation() {
+        return ((BlazeBlockEntity)this).headAnimation;
     }
 
     private static class EnchanterTransform extends ValueBoxTransform.Sided {

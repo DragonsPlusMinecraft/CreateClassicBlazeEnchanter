@@ -27,7 +27,15 @@ public class CCBEServerConfig extends ConfigBase {
 
     public final ConfigBase.ConfigInt classicBlazeForgerFluidCapacity = i(4000, 1000,
             "classicBlazeForgerFluidCapacity",
-            "he amount of liquid a Classic Blaze Enchanter can hold (mB).",
+            "The amount of liquid a Classic Blaze Enchanter can hold (mB).",
+            ConfigAnnotations.RequiresRestart.SERVER.asComment());
+    public final ConfigBase.ConfigFloat classicBlazeForgerNormalEnchantingCostCoefficient = f(1.0f, 0.01f,
+            "classicBlazeForgerNormalEnchantingCostCoefficient",
+            "Experience Cost Coefficient of Classic Blaze Enchanter Regular Enchanting.",
+            ConfigAnnotations.RequiresRestart.SERVER.asComment());
+    public final ConfigBase.ConfigFloat classicBlazeForgerSuperEnchantingCostCoefficient = f(1.0f, 0.01f,
+            "classicBlazeForgerSuperEnchantingCostCoefficient",
+            "Experience Cost Coefficient of Classic Blaze Enchanter Super Enchanting.",
             ConfigAnnotations.RequiresRestart.SERVER.asComment());
 
     @Override

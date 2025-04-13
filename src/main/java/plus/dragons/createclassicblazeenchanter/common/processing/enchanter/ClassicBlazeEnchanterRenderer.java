@@ -44,7 +44,10 @@ public class ClassicBlazeEnchanterRenderer extends BlazeBlockRenderer<ClassicBla
             renderItem(blockEntity, item, blockEntity.processingTime, partialTicks, poseStack, bufferSource, light, overlay);
         if (VisualizationManager.supportsVisualization(blockEntity.getLevel()))
             return;
+        poseStack.pushPose();
+        poseStack.translate(0,0.2,0);
         super.renderSafe(blockEntity, partialTicks, poseStack, bufferSource, light, overlay);
+        poseStack.pushPose();
     }
 
     protected void renderItem(ClassicBlazeEnchanterBlockEntity blockEntity, ItemStack item, int processingTime, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int light, int overlay) {

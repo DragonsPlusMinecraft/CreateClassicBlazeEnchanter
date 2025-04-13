@@ -19,6 +19,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
+import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createclassicblazeenchanter.util.CCBELang;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.ExperienceHelper;
 import plus.dragons.createenchantmentindustry.common.processing.enchanter.EnchantingTemplateItem;
@@ -93,7 +94,8 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour {
     }
 
     public int getMaxExperienceCost() {
-        return EnchantmentHelper.getEnchantmentsForCrafting(filter.item()).entrySet().stream().map(this::enchantmentToCost).max(Integer::compareTo).get();
+        return (int) Math.ceil(EnchantmentHelper.getEnchantmentsForCrafting(filter.item()).entrySet().stream().map(this::enchantmentToCost).max(Integer::compareTo).get()
+                * (enchanter.special? CCBEConfig.server().classicBlazeForgerSuperEnchantingCostCoefficient.get() : CCBEConfig.server().classicBlazeForgerNormalEnchantingCostCoefficient.get()));
     }
 
     private int enchantmentToCost(Object2IntMap.Entry<Holder<Enchantment>> enchantment){
