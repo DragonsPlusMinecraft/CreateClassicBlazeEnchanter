@@ -1,4 +1,24 @@
+/*
+ * Copyright (C) 2025  DragonsPlus
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package plus.dragons.createclassicblazeenchanter.common.processing.enchanter;
+
+import static plus.dragons.createclassicblazeenchanter.common.processing.enchanter.ClassicBlazeEnchanterRenderer.BOOK_MATERIAL;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -7,7 +27,7 @@ import com.simibubi.create.foundation.item.render.CustomRenderedItemModel;
 import com.simibubi.create.foundation.item.render.CustomRenderedItemModelRenderer;
 import com.simibubi.create.foundation.item.render.PartialItemModelRenderer;
 import com.simibubi.create.foundation.item.render.SimpleCustomRenderer;
-import net.createmod.catnip.animation.AnimationTickHolder;
+import java.util.function.Supplier;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.BookModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -24,11 +44,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import plus.dragons.createclassicblazeenchanter.common.CCBECommon;
 import plus.dragons.createclassicblazeenchanter.common.CCBERegistry;
-import plus.dragons.createenchantmentindustry.client.model.CEIPartialModels;
-
-import java.util.function.Supplier;
-
-import static plus.dragons.createclassicblazeenchanter.common.processing.enchanter.ClassicBlazeEnchanterRenderer.BOOK_MATERIAL;
 
 @EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD, modid = CCBECommon.ID)
 public class ClassicBlazeEnchanterItemRenderer extends CustomRenderedItemModelRenderer {
@@ -48,14 +63,14 @@ public class ClassicBlazeEnchanterItemRenderer extends CustomRenderedItemModelRe
 
     @Override
     protected void render(ItemStack stack, CustomRenderedItemModel model, PartialItemModelRenderer renderer, ItemDisplayContext transformType, PoseStack poseStack, MultiBufferSource bufferSource, int light, int overlay) {
-        renderer.render(CEIPartialModels.BLAZE_ITEM.get(), light);
+        renderer.render(model.getOriginalModel(), light);
         poseStack.pushPose();
         poseStack.translate(0, -0.3, 0);
         poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f));
         poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f));
-        poseStack.scale(1.1f,1.1f,1.1f);
+        poseStack.scale(1.1f, 1.1f, 1.1f);
         VertexConsumer vertexconsumer = BOOK_MATERIAL.buffer(bufferSource, RenderType::entitySolid);
-        if(bookModel == null){
+        if (bookModel == null) {
             bookModel = bookModelSupplier.get();
             float page0 = Mth.frac(0.25f) * 1.6f - 0.3f;
             float page1 = Mth.frac(0.75f) * 1.6f - 0.3f;

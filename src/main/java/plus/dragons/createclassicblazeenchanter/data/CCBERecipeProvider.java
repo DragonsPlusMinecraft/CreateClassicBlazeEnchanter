@@ -17,6 +17,11 @@
  */
 
 package plus.dragons.createclassicblazeenchanter.data;
+
+import static com.simibubi.create.AllBlocks.BLAZE_BURNER;
+import static plus.dragons.createclassicblazeenchanter.common.CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK;
+import static plus.dragons.createdragonsplus.common.registry.CDPItems.BLAZE_UPGRADE_SMITHING_TEMPLATE;
+
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -26,10 +31,6 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 import plus.dragons.createenchantmentindustry.common.registry.CEIItems;
-
-import static com.simibubi.create.AllBlocks.BLAZE_BURNER;
-import static plus.dragons.createclassicblazeenchanter.common.CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK;
-import static plus.dragons.createdragonsplus.common.registry.CDPItems.BLAZE_UPGRADE_SMITHING_TEMPLATE;
 
 public class CCBERecipeProvider extends RecipeProvider {
     private static final String ANDESITE = "andesite";
@@ -44,11 +45,11 @@ public class CCBERecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(RecipeOutput output) {
         SmithingTransformRecipeBuilder.smithing(
-                        Ingredient.of(BLAZE_UPGRADE_SMITHING_TEMPLATE),
-                        Ingredient.of(BLAZE_BURNER),
-                        Ingredient.of(CEIItems.ENCHANTING_TEMPLATE),
-                        RecipeCategory.MISC,
-                        CLASSIC_BLAZE_ENCHANTER_BLOCK.asItem())
+                Ingredient.of(BLAZE_UPGRADE_SMITHING_TEMPLATE),
+                Ingredient.of(BLAZE_BURNER),
+                Ingredient.of(CEIItems.ENCHANTING_TEMPLATE),
+                RecipeCategory.MISC,
+                CLASSIC_BLAZE_ENCHANTER_BLOCK.asItem())
                 .unlocks("has_blaze_burner", has(BLAZE_BURNER))
                 .save(output, CLASSIC_BLAZE_ENCHANTER_BLOCK.getId().withPrefix("smithing/"));
     }

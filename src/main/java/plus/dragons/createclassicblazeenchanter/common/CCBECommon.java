@@ -24,8 +24,8 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import plus.dragons.createdragonsplus.common.CDPRegistrate;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
+import plus.dragons.createdragonsplus.common.CDPRegistrate;
 
 @Mod(CCBECommon.ID)
 public class CCBECommon {

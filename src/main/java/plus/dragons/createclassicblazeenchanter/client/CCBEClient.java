@@ -18,11 +18,13 @@
 
 package plus.dragons.createclassicblazeenchanter.client;
 
+import net.createmod.ponder.foundation.PonderIndex;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import plus.dragons.createclassicblazeenchanter.client.ponder.CCBEPonderPlugin;
 import plus.dragons.createclassicblazeenchanter.common.CCBECommon;
 
 @Mod(value = CCBECommon.ID, dist = Dist.CLIENT)
@@ -33,6 +35,6 @@ public class CCBEClient {
 
     @SubscribeEvent
     public void setup(final FMLClientSetupEvent event) {
-        //PonderIndex.addPlugin(new CCBEPonderPlugin());
+        PonderIndex.addPlugin(new CCBEPonderPlugin());
     }
 }

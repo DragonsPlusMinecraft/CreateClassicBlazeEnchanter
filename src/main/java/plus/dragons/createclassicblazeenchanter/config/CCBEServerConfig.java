@@ -21,21 +21,23 @@ package plus.dragons.createclassicblazeenchanter.config;
 import net.createmod.catnip.config.ConfigBase;
 import net.createmod.catnip.config.ui.ConfigAnnotations;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import plus.dragons.createenchantmentindustry.config.CEIFluidsConfig;
 
 public class CCBEServerConfig extends ConfigBase {
-
     public final ConfigBase.ConfigInt classicBlazeForgerFluidCapacity = i(4000, 1000,
             "classicBlazeForgerFluidCapacity",
             "The amount of liquid a Classic Blaze Enchanter can hold (mB).",
             ConfigAnnotations.RequiresRestart.SERVER.asComment());
     public final ConfigBase.ConfigFloat classicBlazeForgerNormalEnchantingCostCoefficient = f(1.0f, 0.01f,
             "classicBlazeForgerNormalEnchantingCostCoefficient",
-            "Experience Cost Coefficient of Classic Blaze Enchanter Regular Enchanting.",
+            "Experience cost coefficient of Classic Blaze Enchanter regular enchanting.",
             ConfigAnnotations.RequiresRestart.SERVER.asComment());
     public final ConfigBase.ConfigFloat classicBlazeForgerSuperEnchantingCostCoefficient = f(1.0f, 0.01f,
             "classicBlazeForgerSuperEnchantingCostCoefficient",
-            "Experience Cost Coefficient of Classic Blaze Enchanter Super Enchanting.",
+            "Experience cost coefficient of Classic Blaze Enchanter super enchanting.",
+            ConfigAnnotations.RequiresRestart.SERVER.asComment());
+    public final ConfigBase.ConfigFloat classicBlazeForgerSuperEnchantingCurseLevelDroppingRate = f(0.25f, 0.01f,
+            "classicBlazeForgerSuperEnchantingCurseLevelDroppingRate",
+            "Probability that a cursed Classic Blaze Enchanter super enchants resulting in a drop in enchantment level",
             ConfigAnnotations.RequiresRestart.SERVER.asComment());
 
     @Override
@@ -48,5 +50,5 @@ public class CCBEServerConfig extends ConfigBase {
         return "server";
     }
 
-    static class Comments { }
+    static class Comments {}
 }

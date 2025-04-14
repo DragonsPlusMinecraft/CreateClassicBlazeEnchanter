@@ -25,8 +25,6 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig.Type;
 import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import plus.dragons.createenchantmentindustry.config.CEIClientConfig;
-import plus.dragons.createenchantmentindustry.config.CEIServerConfig;
 
 public class CCBEConfig {
     private static final CCBEClientConfig CLIENT_CONFIG = new CCBEClientConfig();
@@ -44,7 +42,6 @@ public class CCBEConfig {
             return Unit.INSTANCE;
         }).getValue(), spec -> modContainer.registerConfig(Type.SERVER, spec));
     }
-
 
     public static CCBEClientConfig client() {
         return CLIENT_CONFIG;

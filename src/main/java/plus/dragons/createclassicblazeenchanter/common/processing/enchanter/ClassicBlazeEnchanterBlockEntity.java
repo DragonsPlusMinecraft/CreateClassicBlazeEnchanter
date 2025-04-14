@@ -1,3 +1,21 @@
+/*
+ * Copyright (C) 2025  DragonsPlus
+ * SPDX-License-Identifier: LGPL-3.0-or-later
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package plus.dragons.createclassicblazeenchanter.common.processing.enchanter;
 
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -7,6 +25,8 @@ import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
+import java.util.List;
+import java.util.function.Consumer;
 import net.createmod.catnip.animation.LerpedFloat;
 import net.createmod.catnip.math.AngleHelper;
 import net.createmod.catnip.math.VecHelper;
@@ -36,9 +56,6 @@ import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlockEntity;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.BlazeExperienceBlockEntity;
 import plus.dragons.createenchantmentindustry.common.registry.CEIFluids;
 
-import java.util.List;
-import java.util.function.Consumer;
-
 public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity {
     protected static final int ENCHANTING_TIME = 200;
     protected ItemStack heldItem = ItemStack.EMPTY;
@@ -56,8 +73,8 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
         super(type, pos, state);
     }
 
-    public LerpedFloat headAngle(){
-        return ((BlazeBlockEntity)this).headAngle;
+    public LerpedFloat headAngle() {
+        return ((BlazeBlockEntity) this).headAngle;
     }
 
     public @Nullable IFluidHandler getFluidHandler(@Nullable Direction side) {
@@ -65,7 +82,6 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
             return tanks.getCapability();
         return null;
     }
-
 
     @Override
     protected ConfigurableFluidTank createNormalTank(Consumer<FluidStack> fluidUpdateCallback) {
@@ -82,7 +98,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     @Override
     public void addBehaviours(List<BlockEntityBehaviour> behaviours) {
         super.addBehaviours(behaviours);
-        enchanter = new ClassicEnchanterBehavior(this,new EnchanterTransform());
+        enchanter = new ClassicEnchanterBehavior(this, new EnchanterTransform());
         advancement = new AdvancementBehaviour(this);
         behaviours.add(enchanter);
         behaviours.add(advancement);
@@ -136,8 +152,8 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
             this.cursed = cursed;
         }
         bookTick();
-        if(heldItem.isEmpty()) return;
-        if (level.isClientSide() && isVirtual()){
+        if (heldItem.isEmpty()) return;
+        if (level.isClientSide() && isVirtual()) {
             if (enchanter.canProcess(heldItem)) {
                 if (processingTime < 0) {
                     processingTime = ENCHANTING_TIME / 4;
@@ -188,7 +204,6 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
             processingTime = -1;
             notifyUpdate();
         }
-
     }
 
     @Override
@@ -247,15 +262,14 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     }
 
     public LerpedFloat headAnimation() {
-        return ((BlazeBlockEntity)this).headAnimation;
+        return ((BlazeBlockEntity) this).headAnimation;
     }
 
     private static class EnchanterTransform extends ValueBoxTransform.Sided {
-        private EnchanterTransform() {
-        }
+        private EnchanterTransform() {}
 
         protected Vec3 getSouthLocation() {
-            return VecHelper.voxelSpace((double)8.0F, (double)8.0F, (double)13.5F);
+            return VecHelper.voxelSpace((double) 8.0F, (double) 8.0F, (double) 13.5F);
         }
 
         public void rotate(LevelAccessor level, BlockPos pos, BlockState state, PoseStack poseStack) {

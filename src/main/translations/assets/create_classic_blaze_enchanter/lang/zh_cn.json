@@ -1,3 +1,6 @@
 {
-
+  "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "经典烈焰人附魔室",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "附魔：",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "可用附魔：",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "认识经典烈焰人附魔室"
 }

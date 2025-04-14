@@ -16,15 +16,3 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package plus.dragons.createclassicblazeenchanter.config;
-
-import net.createmod.catnip.config.ConfigBase;
-
-public class CCBEClientConfig extends ConfigBase {
-    @Override
-    public String getName() {
-        return "client";
-    }
-
-    static class Comments {}
-}
