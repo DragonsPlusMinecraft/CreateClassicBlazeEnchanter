@@ -59,7 +59,7 @@ import plus.dragons.createenchantmentindustry.common.registry.CEIFluids;
 public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity {
     protected static final int ENCHANTING_TIME = 200;
     protected ItemStack heldItem = ItemStack.EMPTY;
-    protected int processingTime;
+    protected int processingTime = -1;
     protected boolean special;
     protected boolean cursed;
     protected ClassicEnchanterBehavior enchanter;
@@ -165,6 +165,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
                 }
                 processingTime = -1;
                 heldItem = enchanter.getResult(heldItem);
+                consumeExperience(enchanter.getMaxExperienceCost(), special, false);
                 return;
             }
         }
