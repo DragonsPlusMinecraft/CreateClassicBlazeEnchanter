@@ -188,7 +188,7 @@ publishMods {
     modLoaders.add("neoforge")
 
     curseforge {
-        projectId = "TODO"
+        projectId = "1242892"
         accessToken = providers.environmentVariable("CURSEFORGE_TOKEN")
         minecraftVersions.add(minecraft_version)
 
@@ -199,7 +199,7 @@ publishMods {
     }
 
     modrinth {
-        projectId = "TODO"
+        projectId = "DezW5mUP"
         accessToken = providers.environmentVariable("MODRINTH_TOKEN")
         minecraftVersions.add(minecraft_version)
 
