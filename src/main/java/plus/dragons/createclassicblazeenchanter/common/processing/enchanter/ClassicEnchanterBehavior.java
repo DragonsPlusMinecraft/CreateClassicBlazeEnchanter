@@ -86,7 +86,7 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHav
         removedEnchantments.set(apply.enchantment, 0);
         EnchantmentHelper.setEnchantments(result, removedEnchantments.toImmutable());
         result.enchant(apply.enchantment, applyLevel);
-        if(applyLevel>apply.enchantment.value().getMaxLevel()){
+        if (applyLevel > apply.enchantment.value().getMaxLevel()) {
             enchanter.advancement.trigger(CEIAdvancements.TRANSCENDENT_OVERCLOCK.builtinTrigger());
             enchanter.advancement.awardStat(CEIStats.SUPER_ENCHANT.get(), 1);
         }
