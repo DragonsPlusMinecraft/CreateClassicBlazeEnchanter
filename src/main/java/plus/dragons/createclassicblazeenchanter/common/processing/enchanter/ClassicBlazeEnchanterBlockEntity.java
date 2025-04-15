@@ -255,11 +255,13 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     public void write(CompoundTag compound, HolderLookup.Provider registries, boolean clientPacket) {
         super.write(compound, registries, clientPacket);
         compound.putInt("ProcessingTime", this.processingTime);
+        compound.put("HeldItem", this.heldItem.saveOptional(registries));
     }
 
     protected void read(CompoundTag compound, HolderLookup.Provider registries, boolean clientPacket) {
         super.read(compound, registries, clientPacket);
         this.processingTime = compound.getInt("ProcessingTime");
+        this.heldItem = ItemStack.parseOptional(registries, compound.getCompound("HeldItem"));
     }
 
     public LerpedFloat headAnimation() {

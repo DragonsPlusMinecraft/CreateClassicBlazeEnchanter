@@ -24,9 +24,11 @@ import static plus.dragons.createenchantmentindustry.common.registry.CEIBlocks.B
 
 import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
+import com.simibubi.create.content.kinetics.mechanicalArm.ArmInteractionPointType;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.material.MapColor;
@@ -36,12 +38,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import plus.dragons.createclassicblazeenchanter.common.processing.enchanter.ClassicBlazeEnchanterBlock;
-import plus.dragons.createclassicblazeenchanter.common.processing.enchanter.ClassicBlazeEnchanterBlockEntity;
-import plus.dragons.createclassicblazeenchanter.common.processing.enchanter.ClassicBlazeEnchanterRenderer;
-import plus.dragons.createclassicblazeenchanter.common.processing.enchanter.ClassicEnchanterBlockVisual;
+import plus.dragons.createclassicblazeenchanter.common.processing.enchanter.*;
 import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlock;
-import plus.dragons.createenchantmentindustry.common.registry.CEIBlockEntities;
 import plus.dragons.createenchantmentindustry.common.registry.CEICreativeModeTabs;
 
 @EventBusSubscriber(modid = CCBECommon.ID, bus = EventBusSubscriber.Bus.MOD)
@@ -70,6 +68,9 @@ public class CCBERegistry {
             .validBlock(CLASSIC_BLAZE_ENCHANTER_BLOCK)
             .register();
 
+    public static final RegistryEntry<ArmInteractionPointType, ClassicBlazeEnchanterArmInteractionPoint.Type> CLASSIC_BLAZE_ENCHANTER_ARM_INTERACTION = REGISTRATE.armInteractionPoint("classic_blaze_enchanter",
+            ClassicBlazeEnchanterArmInteractionPoint.Type::new).register();
+
     @SubscribeEvent
     public static void buildContents(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CEICreativeModeTabs.BASE.getKey()) {
@@ -83,7 +84,5 @@ public class CCBERegistry {
                 CLASSIC_BLAZE_ENCHANTER_BLOCKENTITY.get(), ClassicBlazeEnchanterBlockEntity::getFluidHandler);
     }
 
-    public static void register(IEventBus modBus) {
-        modBus.register(CEIBlockEntities.class);
-    }
+    public static void register(IEventBus modBus) {}
 }
