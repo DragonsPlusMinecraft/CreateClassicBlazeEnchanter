@@ -30,6 +30,7 @@ import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -70,6 +71,9 @@ public class CCBERegistry {
 
     public static final RegistryEntry<ArmInteractionPointType, ClassicBlazeEnchanterArmInteractionPoint.Type> CLASSIC_BLAZE_ENCHANTER_ARM_INTERACTION = REGISTRATE.armInteractionPoint("classic_blaze_enchanter",
             ClassicBlazeEnchanterArmInteractionPoint.Type::new).register();
+
+    public static final RegistryEntry<ResourceLocation, ResourceLocation> CLASSIC_BLAZE_ENCHANTER_STAT = REGISTRATE.customStat("classic_enchant", () -> CCBECommon.asResource("classic_enchant"))
+            .lang("Classic Blaze Enchanter Used").register();
 
     @SubscribeEvent
     public static void buildContents(BuildCreativeModeTabContentsEvent event) {

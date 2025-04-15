@@ -18,12 +18,15 @@
 
 package plus.dragons.createclassicblazeenchanter.common;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createdragonsplus.common.CDPRegistrate;
 
@@ -41,6 +44,14 @@ public class CCBECommon {
 
     @SubscribeEvent
     public void setup(final FMLCommonSetupEvent event) {}
+
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public void register(final RegisterEvent event) {
+        if (event.getRegistry() == BuiltInRegistries.TRIGGER_TYPES) {
+            CCBEAdvancements.register();
+            CCBEAdvancements.BuiltinTriggersQuickDeploy.register();
+        }
+    }
 
     public static ResourceLocation asResource(String name) {
         return ResourceLocation.fromNamespaceAndPath(ID, name);

@@ -1,4 +1,8 @@
 {
+  "advancement.create_classic_blaze_enchanter.legacy_ignition": "传承铸炉",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "它来自上一个纪元。获取经典烈焰人附魔室",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "咒火纪程",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "经典烈焰人锻造室工作 1,000 次",
   "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "经典烈焰人附魔室",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "当前附魔：",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "可用附魔：",
@@ -25,5 +29,6 @@
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "节肢杀手Ⅰ",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "如果附魔模板上存在多个附魔，可用附魔将被随机应用到物品上",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "产物：钻石剑",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "产物：钻石剑 包含附魔："
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "产物：钻石剑 包含附魔：",
+  "stat.create_classic_blaze_enchanter.classic_enchant": "经典烈焰人附魔室工作次数"
 }

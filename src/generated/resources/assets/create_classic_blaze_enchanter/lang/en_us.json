@@ -1,4 +1,8 @@
 {
+  "advancement.create_classic_blaze_enchanter.legacy_ignition": "Legacy Ignition",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "It's from the last era. Obtain a Classic Blaze Enchanter",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "Thousandfold Everchant",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "Classic Blaze Enchanter enchants 1,000 times",
   "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "Classic Blaze Enchanter",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "Enchantment:",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "Available Enchantment:",
@@ -25,5 +29,6 @@
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "Arthropods Ⅰ",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "If there are multiple enchantments on the Enchanting Template, one of the available enchantments will be randomly selected for enchanting",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "Output: Diamond Sword",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "Output: Diamond Sword with enchantment:"
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "Output: Diamond Sword with enchantment:",
+  "stat.create_classic_blaze_enchanter.classic_enchant": "Classic Blaze Enchanter Used"
 }

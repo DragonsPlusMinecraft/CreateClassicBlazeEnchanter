@@ -26,6 +26,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.neoforge.data.loading.DatagenModLoader;
 import plus.dragons.createclassicblazeenchanter.client.ponder.CCBEPonderPlugin;
+import plus.dragons.createclassicblazeenchanter.common.CCBEAdvancements;
 import plus.dragons.createclassicblazeenchanter.common.CCBECommon;
 
 @Mod(CCBECommon.ID)
@@ -36,6 +37,7 @@ public class CCBEData {
         REGISTRATE.registerBuiltinLocalization("interface");
         REGISTRATE.registerForeignLocalization();
         REGISTRATE.registerPonderLocalization(CCBEPonderPlugin::new);
+        REGISTRATE.registerExtraLocalization(CCBEAdvancements::provideLang);
         modBus.register(this);
     }
 
@@ -48,5 +50,6 @@ public class CCBEData {
         var client = event.includeClient();
         var server = event.includeServer();
         generator.addProvider(server, new CCBERecipeProvider(output, lookupProvider));
+        // generator.addProvider(server, new CCBEAdvancements(output, lookupProvider)); // Manual Edit
     }
 }

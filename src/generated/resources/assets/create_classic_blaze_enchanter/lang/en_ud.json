@@ -1,4 +1,8 @@
 {
+  "advancement.create_classic_blaze_enchanter.legacy_ignition": "uoıʇıubI ʎɔɐbǝꞀ",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "ɹǝʇuɐɥɔuƎ ǝzɐןᗺ ɔıssɐןƆ ɐ uıɐʇqO ˙ɐɹǝ ʇsɐן ǝɥʇ ɯoɹɟ s,ʇI",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "ʇuɐɥɔɹǝʌƎ pןoɟpuɐsnoɥ⟘",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "sǝɯıʇ 000'Ɩ sʇuɐɥɔuǝ ɹǝʇuɐɥɔuƎ ǝzɐןᗺ ɔıssɐןƆ",
   "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "ɹǝʇuɐɥɔuƎ ǝzɐןᗺ ɔıssɐןƆ",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": ":ʇuǝɯʇuɐɥɔuƎ",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": ":ʇuǝɯʇuɐɥɔuƎ ǝןqɐןıɐʌⱯ",
@@ -25,5 +29,6 @@
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "Ⅰ spodoɹɥʇɹⱯ",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "buıʇuɐɥɔuǝ ɹoɟ pǝʇɔǝןǝs ʎןɯopuɐɹ ǝq ןןıʍ sʇuǝɯʇuɐɥɔuǝ ǝןqɐןıɐʌɐ ǝɥʇ ɟo ǝuo 'ǝʇɐןdɯǝ⟘ buıʇuɐɥɔuƎ ǝɥʇ uo sʇuǝɯʇuɐɥɔuǝ ǝןdıʇןnɯ ǝɹɐ ǝɹǝɥʇ ɟI",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "pɹoʍS puoɯɐıᗡ :ʇndʇnO",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": ":ʇuǝɯʇuɐɥɔuǝ ɥʇıʍ pɹoʍS puoɯɐıᗡ :ʇndʇnO"
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": ":ʇuǝɯʇuɐɥɔuǝ ɥʇıʍ pɹoʍS puoɯɐıᗡ :ʇndʇnO",
+  "stat.create_classic_blaze_enchanter.classic_enchant": "pǝs∩ ɹǝʇuɐɥɔuƎ ǝzɐןᗺ ɔıssɐןƆ"
 }
