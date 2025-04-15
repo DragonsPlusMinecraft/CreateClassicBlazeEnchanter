@@ -43,7 +43,9 @@ import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createclassicblazeenchanter.util.CCBELang;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.ExperienceHelper;
 import plus.dragons.createenchantmentindustry.common.processing.enchanter.EnchantingTemplateItem;
+import plus.dragons.createenchantmentindustry.common.registry.CEIAdvancements;
 import plus.dragons.createenchantmentindustry.common.registry.CEIItems;
+import plus.dragons.createenchantmentindustry.common.registry.CEIStats;
 import plus.dragons.createenchantmentindustry.util.CEILang;
 
 public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHaveGoggleInformation {
@@ -84,6 +86,10 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHav
         removedEnchantments.set(apply.enchantment, 0);
         EnchantmentHelper.setEnchantments(result, removedEnchantments.toImmutable());
         result.enchant(apply.enchantment, applyLevel);
+        if(applyLevel>apply.enchantment.value().getMaxLevel()){
+            enchanter.advancement.trigger(CEIAdvancements.TRANSCENDENT_OVERCLOCK.builtinTrigger());
+            enchanter.advancement.awardStat(CEIStats.SUPER_ENCHANT.get(), 1);
+        }
         return result;
     }
 

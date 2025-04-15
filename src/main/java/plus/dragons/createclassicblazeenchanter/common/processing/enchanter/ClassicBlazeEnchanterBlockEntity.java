@@ -49,6 +49,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.Nullable;
+import plus.dragons.createclassicblazeenchanter.common.CCBERegistry;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createdragonsplus.common.advancements.AdvancementBehaviour;
 import plus.dragons.createdragonsplus.common.fluids.tank.ConfigurableFluidTank;
@@ -165,6 +166,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
                 }
                 processingTime = -1;
                 heldItem = enchanter.getResult(heldItem);
+                advancement.awardStat(CCBERegistry.CLASSIC_BLAZE_ENCHANTER_STAT.get(),1);
                 consumeExperience(enchanter.getMaxExperienceCost(), special, false);
                 return;
             }
