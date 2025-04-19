@@ -1,8 +1,7 @@
-### Create: Classic Blaze Enchanter 1.0.1
+### Create: Classic Blaze Enchanter 1.0.2
 
-Requires Create: Dragons Plus 1.3.2
+Requires Create: Dragons Plus 1.3.4
 
 #### Update
-* Add advancements and stat
-* Add mechanical arm support
+* Crafting Recipe of Classic Blaze Enchanter now requires Blaze's Enchanting Handbook
 

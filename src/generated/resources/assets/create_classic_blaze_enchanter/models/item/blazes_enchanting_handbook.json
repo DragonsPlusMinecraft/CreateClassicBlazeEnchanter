@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "create_classic_blaze_enchanter:item/blazes_enchanting_handbook"
+  }
+}

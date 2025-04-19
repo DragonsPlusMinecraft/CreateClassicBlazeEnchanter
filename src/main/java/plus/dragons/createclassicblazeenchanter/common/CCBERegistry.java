@@ -28,10 +28,12 @@ import com.simibubi.create.content.kinetics.mechanicalArm.ArmInteractionPointTyp
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
 import com.tterrag.registrate.util.entry.BlockEntry;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -67,6 +69,11 @@ public class CCBERegistry {
             .visual(() -> ClassicEnchanterBlockVisual::new)
             .renderer(() -> ClassicBlazeEnchanterRenderer::new)
             .validBlock(CLASSIC_BLAZE_ENCHANTER_BLOCK)
+            .register();
+
+    public static final ItemEntry<Item> BLAZES_ENCHANTING_HANDBOOK = REGISTRATE
+            .item("blazes_enchanting_handbook",Item::new)
+            .lang("Blaze's Enchanting Handbook")
             .register();
 
     public static final RegistryEntry<ArmInteractionPointType, ClassicBlazeEnchanterArmInteractionPoint.Type> CLASSIC_BLAZE_ENCHANTER_ARM_INTERACTION = REGISTRATE.armInteractionPoint("classic_blaze_enchanter",

@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing_transform",
   "addition": {
-    "item": "create_enchantment_industry:enchanting_template"
+    "item": "create_classic_blaze_enchanter:blazes_enchanting_handbook"
   },
   "base": {
     "item": "create:blaze_burner"

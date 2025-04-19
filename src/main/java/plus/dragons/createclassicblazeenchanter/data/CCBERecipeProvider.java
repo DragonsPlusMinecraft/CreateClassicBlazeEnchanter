@@ -19,10 +19,16 @@
 package plus.dragons.createclassicblazeenchanter.data;
 
 import static com.simibubi.create.AllBlocks.BLAZE_BURNER;
+import static com.simibubi.create.AllItems.STURDY_SHEET;
+import static net.minecraft.world.item.Items.EXPERIENCE_BOTTLE;
+import static net.minecraft.world.item.Items.MAGMA_BLOCK;
+import static plus.dragons.createclassicblazeenchanter.common.CCBERegistry.BLAZES_ENCHANTING_HANDBOOK;
 import static plus.dragons.createclassicblazeenchanter.common.CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK;
 import static plus.dragons.createdragonsplus.common.registry.CDPItems.BLAZE_UPGRADE_SMITHING_TEMPLATE;
+import static plus.dragons.createdragonsplus.data.recipe.VanillaRecipeBuilders.shapeless;
 
 import java.util.concurrent.CompletableFuture;
+
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -30,13 +36,8 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
-import plus.dragons.createenchantmentindustry.common.registry.CEIItems;
 
 public class CCBERecipeProvider extends RecipeProvider {
-    private static final String ANDESITE = "andesite";
-    private static final String COPPER = "copper";
-    private static final String BRASS = "brass";
-    private static final String TRAIN = "train";
 
     public CCBERecipeProvider(PackOutput output, CompletableFuture<Provider> registries) {
         super(output, registries);
@@ -47,10 +48,19 @@ public class CCBERecipeProvider extends RecipeProvider {
         SmithingTransformRecipeBuilder.smithing(
                 Ingredient.of(BLAZE_UPGRADE_SMITHING_TEMPLATE),
                 Ingredient.of(BLAZE_BURNER),
-                Ingredient.of(CEIItems.ENCHANTING_TEMPLATE),
+                Ingredient.of(BLAZES_ENCHANTING_HANDBOOK),
                 RecipeCategory.MISC,
                 CLASSIC_BLAZE_ENCHANTER_BLOCK.asItem())
                 .unlocks("has_blaze_burner", has(BLAZE_BURNER))
                 .save(output, CLASSIC_BLAZE_ENCHANTER_BLOCK.getId().withPrefix("smithing/"));
+        shapeless().output(BLAZES_ENCHANTING_HANDBOOK)
+                .require(BLAZE_UPGRADE_SMITHING_TEMPLATE)
+                .require(STURDY_SHEET)
+                .require(STURDY_SHEET)
+                .require(EXPERIENCE_BOTTLE)
+                .require(EXPERIENCE_BOTTLE)
+                .require(MAGMA_BLOCK)
+                .unlockedBy("has_blaze_burner", has(BLAZE_BURNER))
+                .accept(output);
     }
 }
