@@ -28,7 +28,6 @@ import static plus.dragons.createdragonsplus.common.registry.CDPItems.BLAZE_UPGR
 import static plus.dragons.createdragonsplus.data.recipe.VanillaRecipeBuilders.shapeless;
 
 import java.util.concurrent.CompletableFuture;
-
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -38,7 +37,6 @@ import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class CCBERecipeProvider extends RecipeProvider {
-
     public CCBERecipeProvider(PackOutput output, CompletableFuture<Provider> registries) {
         super(output, registries);
     }

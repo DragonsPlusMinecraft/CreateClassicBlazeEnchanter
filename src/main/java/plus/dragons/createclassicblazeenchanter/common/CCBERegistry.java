@@ -24,6 +24,7 @@ import static plus.dragons.createenchantmentindustry.common.registry.CEIBlocks.B
 
 import com.simibubi.create.AllTags;
 import com.simibubi.create.Create;
+import com.simibubi.create.api.behaviour.movement.MovementBehaviour;
 import com.simibubi.create.content.kinetics.mechanicalArm.ArmInteractionPointType;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.tterrag.registrate.util.entry.BlockEntityEntry;
@@ -43,6 +44,7 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import plus.dragons.createclassicblazeenchanter.common.processing.enchanter.*;
 import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlock;
+import plus.dragons.createdragonsplus.common.processing.blaze.BlazeMovementBehaviour;
 import plus.dragons.createenchantmentindustry.common.registry.CEICreativeModeTabs;
 
 @EventBusSubscriber(modid = CCBECommon.ID, bus = EventBusSubscriber.Bus.MOD)
@@ -54,6 +56,7 @@ public class CCBERegistry {
             .properties(p -> p.mapColor(MapColor.COLOR_GRAY).lightLevel(BlazeBlock::getLight))
             .transform(pickaxeOnly())
             .addLayer(() -> RenderType::cutoutMipped)
+            .onRegister(block -> MovementBehaviour.REGISTRY.register(block, new BlazeMovementBehaviour()))
             .tag(AllTags.AllBlockTags.FAN_TRANSPARENT.tag, AllTags.AllBlockTags.FAN_PROCESSING_CATALYSTS_SMOKING.tag)
             .blockstate((ctx, prov) -> prov.horizontalBlock(
                     ctx.getEntry(),
@@ -72,7 +75,7 @@ public class CCBERegistry {
             .register();
 
     public static final ItemEntry<Item> BLAZES_ENCHANTING_HANDBOOK = REGISTRATE
-            .item("blazes_enchanting_handbook",Item::new)
+            .item("blazes_enchanting_handbook", Item::new)
             .lang("Blaze's Enchanting Handbook")
             .register();
 
