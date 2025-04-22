@@ -55,7 +55,7 @@ public class Scene {
         scene.idle(65);
 
         scene.overlay().showText(60)
-                .text("Pass in Liquid Experience to get it started")
+                .text("Provide it Liquid Experience to activate it")
                 .attachKeyFrame()
                 .placeNearTarget()
                 .pointAt(util.vector().centerOf(2, 2, 1));
@@ -74,70 +74,39 @@ public class Scene {
 
         Vec3 slotVec = util.vector().of(2.0f, 2.5f, 1.5f);
         scene.overlay().showFilterSlotInput(slotVec, Direction.WEST, 90);
-        scene.overlay().showText(160)
-                .text("Before you can start enchanting with it, you need to set Enchanting Template via filter slot. " +
-                        "Enchantment on the Enchanting Template will be enchanted to item and will not consume the Enchanting Template or enchantment")
+        scene.overlay().showText(75)
+                .text("Before enchanting with it, Enchanting Template must be set via filter slot")
                 .placeNearTarget()
                 .attachKeyFrame()
                 .pointAt(slotVec);
         scene.idle(5);
         var template = CEIItems.ENCHANTING_TEMPLATE.asStack();
-        scene.overlay().showText(100)
-                .text("Set Enchanting Template with enchantments:")
-                .colored(PonderPalette.INPUT)
-                .independent(0);
-        scene.overlay().showText(100)
-                .text("Sweeping Edge Ⅰ")
-                .colored(PonderPalette.INPUT)
-                .independent(25);
-        scene.overlay().showText(100)
-                .text("Arthropods Ⅰ")
-                .colored(PonderPalette.INPUT)
-                .independent(40);
         CEIPonderScenes.enchant(scene, template, Enchantments.SWEEPING_EDGE, 1);
         CEIPonderScenes.enchant(scene, template, Enchantments.BANE_OF_ARTHROPODS, 1);
-        scene.overlay().showControls(slotVec, Pointing.RIGHT, 100).withItem(template).rightClick();
+        scene.overlay().showControls(slotVec, Pointing.RIGHT, 50).withItem(template).rightClick();
         scene.world().modifyBlockEntity(util.grid().at(2, 2, 1), ClassicBlazeEnchanterBlockEntity.class, be -> {
             ClassicEnchanterBehavior enchanter = be.getBehaviour(ClassicEnchanterBehavior.TYPE);
             enchanter.setFilter(template);
         });
-        scene.idle(175);
+        scene.idle(75);
+        scene.overlay().showText(100)
+                .text("Enchantment on the Enchanting Template will be enchanted to item and will not consume the Enchanting Template or the enchantment")
+                .placeNearTarget()
+                .attachKeyFrame()
+                .pointAt(slotVec);
+        scene.idle(105);
 
         scene.overlay().showText(70)
-                .text("If there are multiple enchantments on the Enchanting Template, one of the available enchantments will be randomly selected for enchanting")
+                .text("If there are multiple available enchantments, random one will be applied")
                 .placeNearTarget()
                 .attachKeyFrame()
                 .pointAt(slotVec);
         scene.idle(25);
-        scene.overlay().showText(47)
-                .text("Output: Diamond Sword")
-                .colored(PonderPalette.OUTPUT);
-        scene.overlay().showControls(util.vector().topOf(2, 2, 1), Pointing.RIGHT, 45).withItem(Items.DIAMOND_SWORD.getDefaultInstance()).rightClick();
         scene.world().modifyBlockEntity(util.grid().at(2, 2, 1), ClassicBlazeEnchanterBlockEntity.class, be -> be.insertItem(Items.DIAMOND_SWORD.getDefaultInstance(), false));
-        scene.idle(50);
-        scene.overlay().showText(47)
-                .text("Output: Diamond Sword with enchantment:")
-                .colored(PonderPalette.OUTPUT);
-        scene.overlay().showText(47)
-                .text("SWEEPING EDGE Ⅰ")
-                .colored(PonderPalette.OUTPUT)
-                .independent(25);
-        scene.idle(50);
-        scene.overlay().showText(47)
-                .text("Output: Diamond Sword with enchantments:")
-                .colored(PonderPalette.OUTPUT);
-        scene.overlay().showText(47)
-                .text("SWEEPING EDGE Ⅰ")
-                .colored(PonderPalette.OUTPUT)
-                .independent(25);
-        scene.overlay().showText(47)
-                .text("Bane of Arthropods Ⅰ")
-                .colored(PonderPalette.OUTPUT)
-                .independent(40);
         scene.idle(50);
 
         scene.overlay().showText(70)
-                .text("Classic Blaze Enchanter enters the Super Enchanting mode in the same way as the Blaze Enchanter, requiring Cake O' Enchanting")
+                .text("Classic Blaze Enchanter enters Super Enchanting mode in same way as Blaze Enchanter, requiring Cake O' Enchanting")
                 .placeNearTarget()
                 .attachKeyFrame()
                 .pointAt(util.vector().centerOf(2, 2, 1));
@@ -150,30 +119,32 @@ public class Scene {
                 bs -> bs.setValue(BlazeBlock.HEAT_LEVEL, BlazeBurnerBlock.HeatLevel.SEETHING), false);
         scene.idle(75);
 
+        scene.overlay().showText(60)
+                .attachKeyFrame()
+                .text("Classic Blaze Enchanter in Super Enchanting mode exclusively requires Super Enchanting Templates")
+                .placeNearTarget()
+                .pointAt(util.vector().topOf(2, 2, 1));
         var template2 = CEIItems.SUPER_ENCHANTING_TEMPLATE.asStack();
-        scene.overlay().showText(70)
-                .text("Set Enchanting Template with enchantment:")
-                .colored(PonderPalette.INPUT);
-        scene.overlay().showText(70)
-                .text("Smite Ⅴ")
-                .colored(PonderPalette.INPUT)
-                .independent(25);
         CEIPonderScenes.enchant(scene, template2, Enchantments.SMITE, 5);
         scene.overlay().showControls(slotVec, Pointing.RIGHT, 45).withItem(template2).rightClick();
         scene.world().modifyBlockEntity(util.grid().at(2, 2, 1), ClassicBlazeEnchanterBlockEntity.class, be -> {
             ClassicEnchanterBehavior enchanter = be.getBehaviour(ClassicEnchanterBehavior.TYPE);
             enchanter.setFilter(template);
         });
-        scene.overlay().showText(70)
+        scene.idle(65);
+
+        scene.overlay().showText(80)
                 .text("If the item already has an enchantment of the same type and level, Super Enchanting increases the enchantment by one level, up to one level beyond level cap")
                 .placeNearTarget()
                 .attachKeyFrame()
                 .pointAt(util.vector().centerOf(2, 2, 1));
-        scene.idle(75);
-        scene.overlay().showText(47)
-                .text("Output: Diamond Sword")
-                .colored(PonderPalette.OUTPUT);
-        scene.overlay().showControls(util.vector().topOf(2, 2, 1), Pointing.RIGHT, 45).withItem(Items.DIAMOND_SWORD.getDefaultInstance()).rightClick();
+        scene.idle(85);
+
+        scene.overlay().showText(40)
+                .text("Make sure to place a Lightning Rod nearby")
+                .placeNearTarget()
+                .pointAt(util.vector().topOf(1, 2, 1));
+        scene.idle(10);
         scene.world().modifyBlockEntity(util.grid().at(2, 2, 1), ClassicBlazeEnchanterBlockEntity.class, be -> be.insertItem(Items.DIAMOND_SWORD.getDefaultInstance(), false));
         scene.world().setBlock(util.grid().at(1, 2, 1), Blocks.LIGHTNING_ROD.defaultBlockState(), true);
         scene.idle(50);
@@ -183,33 +154,22 @@ public class Scene {
             return lightning;
         });
         scene.world().setBlock(util.grid().at(1, 1, 1), CEIBlocks.SUPER_EXPERIENCE_BLOCK.getDefaultState(), false);
-        scene.overlay().showText(47)
-                .text("Output: Diamond Sword with enchantment:")
-                .colored(PonderPalette.OUTPUT);
-        scene.overlay().showText(47)
-                .text("SMITE Ⅴ")
-                .colored(PonderPalette.OUTPUT)
-                .independent(25);
+        scene.overlay().showText(40)
+                .text("Super Enchanting can cause lightning strikes")
+                .placeNearTarget()
+                .pointAt(util.vector().topOf(1, 2, 1));
         scene.idle(50);
         scene.world().createEntity(level -> {
             var lightning = EntityType.LIGHTNING_BOLT.create(level);
             lightning.moveTo(Vec3.atBottomCenterOf(util.grid().at(1, 2, 1)));
             return lightning;
         });
-        scene.overlay().showText(47)
-                .text("Output: Diamond Sword with enchantment:")
-                .colored(PonderPalette.OUTPUT);
-        scene.overlay().showText(47)
-                .text("SMITE Ⅵ")
-                .colored(PonderPalette.OUTPUT)
-                .independent(25);
-        scene.idle(50);
-        scene.overlay().showText(160)
-                .text("Super Enchanting invites lightning strikes, just like any other Super Enchanting Blaze. " +
-                        "If the lightning strike is avoided by covering it with block, then the enchanting has a chance of causing the level of the enchantment to drop")
+        scene.idle(5);
+        scene.overlay().showText(80)
+                .text("You can cover the Classic Blaze Enchanter with block to avoid lightning strikes, but then level of existing enchantment may drop")
                 .placeNearTarget()
                 .attachKeyFrame()
                 .pointAt(util.vector().centerOf(2, 2, 1));
-        scene.idle(160);
+        scene.idle(80);
     }
 }

@@ -1,13 +1,14 @@
 {
-  "advancement.create_classic_blaze_enchanter.legacy_ignition": "Legacy Ignition",
-  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "It's from the last era. Obtain a Classic Blaze Enchanter",
-  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "Thousandfold Everchant",
-  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "Classic Blaze Enchanter enchants 1,000 times",
-  "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "Classic Blaze Enchanter",
-  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "Enchantment:",
-  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "Available Enchantment:",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "Introduction to Classic Blaze Enchanter",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_1": "This is a Classic Blaze Enchanter. It can continuously enchant items according to Enchanting Template",
+  "_comment.unlocalized": "Remove this line after finishing localization.",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition": "レガシー・イグニッション！",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "先の時代から来た技術だ。クラシックブレイズエンチャンターを手に入れる",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "千の詠唱",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "クラシックブレイズエンチャンターがアイテムを1000回エンチャントした",
+  "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "クラシックブレイズエンチャンター",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "エンチャント:",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "利用可能なエンチャント:",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "クラシックブレイズエンチャンターの紹介",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_1": "これはクラシックブレイズエンチャンターです。エンチャントテンプレートに従ってアイテムに継続してエンチャントを施すことができます。",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_10": "Super Enchanting can cause lightning strikes",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_11": "You can cover the Classic Blaze Enchanter with block to avoid lightning strikes, but then level of existing enchantment may drop",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_2": "Provide it Liquid Experience to activate it",
@@ -18,6 +19,6 @@
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "Classic Blaze Enchanter in Super Enchanting mode exclusively requires Super Enchanting Templates",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "If the item already has an enchantment of the same type and level, Super Enchanting increases the enchantment by one level, up to one level beyond level cap",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "Make sure to place a Lightning Rod nearby",
-  "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "Blaze's Enchanting Handbook",
-  "stat.create_classic_blaze_enchanter.classic_enchant": "Classic Blaze Enchanter Used"
+  "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "エンチャントの手引き",
+  "stat.create_classic_blaze_enchanter.classic_enchant": "クラシックブレイズエンチャンターが使用中"
 }

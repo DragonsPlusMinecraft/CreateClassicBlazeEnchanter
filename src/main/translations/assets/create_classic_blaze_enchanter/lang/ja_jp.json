@@ -1,0 +1,13 @@
+{
+  "advancement.create_classic_blaze_enchanter.legacy_ignition": "レガシー・イグニッション！",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "先の時代から来た技術だ。クラシックブレイズエンチャンターを手に入れる",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "千の詠唱",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "クラシックブレイズエンチャンターがアイテムを1000回エンチャントした",
+  "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "クラシックブレイズエンチャンター",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "エンチャント:",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "利用可能なエンチャント:",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "クラシックブレイズエンチャンターの紹介",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_1": "これはクラシックブレイズエンチャンターです。エンチャントテンプレートに従ってアイテムに継続してエンチャントを施すことができます。",
+  "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "エンチャントの手引き",
+  "stat.create_classic_blaze_enchanter.classic_enchant": "クラシックブレイズエンチャンターが使用中"
+}
