@@ -1,7 +1,5 @@
-### Create: Classic Blaze Enchanter 1.0.2
-
-Requires Create: Dragons Plus 1.3.5 and Create: Enchantment Industry 2.0.9. Important bugfix is included.
+### Create: Classic Blaze Enchanter 1.0.3
 
 #### Update
-* Crafting Recipe of Classic Blaze Enchanter now requires Blaze's Enchanting Handbook
-* Add visual for Classic Blaze Enchanter when on contraption
+* Ponder has been improved.
+* Add Japanese Translation by @YukkuriOfuton (due to ponder change, it's incomplete)
