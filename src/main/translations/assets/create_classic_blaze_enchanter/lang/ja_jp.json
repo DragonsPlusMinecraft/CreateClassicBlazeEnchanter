@@ -8,6 +8,16 @@
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "利用可能なエンチャント:",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "クラシックブレイズエンチャンターの紹介",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_1": "これはクラシックブレイズエンチャンターです。エンチャントテンプレートに従ってアイテムに継続してエンチャントを施すことができます。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_10": "スーパーエンチャントは落雷を引き起こす可能性があります",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_11": "クラシックブレイズエンチャンターをブロックで覆って落雷を避けることもできますが、既存のエンチャントのレベルが下がる可能性があります。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_2": "使用するためには液体経験値を供給しましょう",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_3": "エンチャントする前に、フィルタースロットでエンチャントテンプレートを設定する必要があります。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_4": "エンチャントテンプレートのエンチャントはアイテムに付与され、エンチャントテンプレートやエンチャント内容を消費しません。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_5": "利用可能なエンチャントが複数ある場合はランダムに1つが付与されます",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "クラシックブレイズエンチャンターは、ブレイズエンチャンターと同じく、エンチャントケーキを与えるとスーパーエンチャントモードに入ります。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "スーパーエンチャントモードのクラシックブレイズエンチャンターは、スーパーエンチャントテンプレートのみを必要とします。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "アイテムにすでに同じタイプで同じレベルのエンチャントが施されている場合、スーパーエンチャントはエンチャントのレベルを1レベル上げます。そしてレベル上限のさらに1レベル上まで上げることができます。",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "近くに避雷針を設置しましょう",
   "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "エンチャントの手引き",
   "stat.create_classic_blaze_enchanter.classic_enchant": "クラシックブレイズエンチャンターが使用中"
 }
