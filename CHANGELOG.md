@@ -1,5 +1,4 @@
-### Create: Classic Blaze Enchanter 1.0.3
+### Create: Classic Blaze Enchanter 1.0.4
 
 #### Update
-* Ponder has been improved.
-* Add Japanese Translation by @YukkuriOfuton (due to ponder change, it's incomplete)
+* Update Japanese Translation by @YukkuriOfuton
