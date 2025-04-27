@@ -1,0 +1,23 @@
+{
+  "advancement.create_classic_blaze_enchanter.legacy_ignition": "Наследие прошлого",
+  "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "Это из прошлой эры. Получите классического всполоха-чародея",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "Тысячекратное зачарование",
+  "advancement.create_classic_blaze_enchanter.thousandfold_everchant.desc": "Зачаруйте классическим всполохом-чародеем 1000 раз",
+  "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "Классический всполох-чародей",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "Чары:",
+  "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "Доступные чары:",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "Знакомством с классическим всполохом-чародеем",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_1": "Это классический всполох-чародей. Он может постоянно зачаровывать предметы по шаблону",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_10": "Супер-зачаровывание может вызывать удары молний",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_11": "Вы можете накрыть всполоха-чародея блоком, чтобы избежать молний, но уровень существующих чар может снизиться",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_2": "Для активации требуется жидкий опыт",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_3": "Перед зачаровыванием необходимо установить шаблон зачарования в слот фильтра",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_4": "Чары с шаблона будут перенесены на предмет без расходования шаблона",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_5": "При наличии нескольких чар будут применены случайные",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "Режим супер-зачаровывания активируется так же, как у обычного всполоха-чародея — с помощью торта опыта",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "В режиме супер-зачаровывания требуются исключительно шаблоны супер-зачарования",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "Если предмет уже имеет чары того же типа и уровня, супер-зачаровывание повысит их уровень на 1 (вплоть до уровня выше максимального)",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "Рекомендуется установить громоотвод поблизости",
+  "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "Справочник зачарования всполоха",
+  "stat.create_classic_blaze_enchanter.classic_enchant": "Использований классического всполоха-чародея"
+}
