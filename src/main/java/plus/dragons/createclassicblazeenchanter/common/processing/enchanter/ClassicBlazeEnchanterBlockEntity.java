@@ -24,7 +24,6 @@ import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehavi
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
-import com.simibubi.create.foundation.utility.BlockHelper;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
 import java.util.List;
@@ -43,10 +42,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -57,7 +54,6 @@ import plus.dragons.createclassicblazeenchanter.common.CCBERegistry;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createdragonsplus.common.advancements.AdvancementBehaviour;
 import plus.dragons.createdragonsplus.common.fluids.tank.ConfigurableFluidTank;
-import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlockEntity;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.BlazeExperienceBlockEntity;
 import plus.dragons.createenchantmentindustry.common.registry.CEIFluids;
 
@@ -108,7 +104,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
         behaviours.add(enchanter);
         behaviours.add(advancement);
         behaviours.add(new DirectBeltInputBehaviour(this)
-                .onlyInsertWhen(side-> heldItem.isEmpty())
+                .onlyInsertWhen(side -> heldItem.isEmpty())
                 .setInsertionHandler(((transportedItemStack, side, simulate) -> this.insertItem(transportedItemStack.stack, simulate))));
     }
 
@@ -215,15 +211,14 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
                 processingTime = -1;
                 notifyUpdate();
             }
-            tryExportToBelt();
+            tryExport();
         }
     }
 
-    protected void tryExportToBelt(){
-        for(var side:Direction.Plane.HORIZONTAL){
+    protected void tryExport() {
+        for (var side : Direction.Plane.HORIZONTAL) {
             BlockPos nextPosition = worldPosition.relative(side);
-            DirectBeltInputBehaviour directBeltInputBehaviour =
-                    BlockEntityBehaviour.get(level, nextPosition, DirectBeltInputBehaviour.TYPE);
+            DirectBeltInputBehaviour directBeltInputBehaviour = BlockEntityBehaviour.get(level, nextPosition, DirectBeltInputBehaviour.TYPE);
             if (directBeltInputBehaviour != null && directBeltInputBehaviour.canInsertFromSide(side)) {
                 ItemStack returned = directBeltInputBehaviour.handleInsertion(heldItem.copy(), side, false);
                 if (returned.isEmpty()) {
@@ -297,7 +292,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     }
 
     public LerpedFloat headAnimation() {
-        return ((BlazeBlockEntity) this).headAnimation;
+        return this.headAnimation;
     }
 
     private static class EnchanterTransform extends ValueBoxTransform.Sided {

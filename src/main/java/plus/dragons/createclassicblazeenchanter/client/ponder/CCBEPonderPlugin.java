@@ -21,6 +21,7 @@ package plus.dragons.createclassicblazeenchanter.client.ponder;
 import static plus.dragons.createenchantmentindustry.client.ponder.CEIPonderTags.EXPERIENCE_APPLIANCES;
 import static plus.dragons.createenchantmentindustry.client.ponder.CEIPonderTags.SUPER_EXPERIENCE_APPLIANCES;
 
+import com.simibubi.create.infrastructure.ponder.AllCreatePonderTags;
 import com.tterrag.registrate.util.entry.ItemProviderEntry;
 import net.createmod.ponder.api.registration.PonderPlugin;
 import net.createmod.ponder.api.registration.PonderSceneRegistrationHelper;
@@ -40,6 +41,7 @@ public class CCBEPonderPlugin implements PonderPlugin {
     public void registerTags(PonderTagRegistrationHelper<ResourceLocation> helper) {
         helper.addToTag(EXPERIENCE_APPLIANCES).add(CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK.getId());
         helper.addToTag(SUPER_EXPERIENCE_APPLIANCES).add(CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK.getId());
+        helper.addToTag(AllCreatePonderTags.ARM_TARGETS).add(CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK.getId());
     }
 
     @Override
@@ -49,8 +51,10 @@ public class CCBEPonderPlugin implements PonderPlugin {
 
     static class PonderScene {
         static void register(PonderSceneRegistrationHelper<ResourceLocation> helper) {
-            PonderSceneRegistrationHelper<ItemProviderEntry<?, ?>> HELPER = helper.withKeyFunction(DeferredHolder::getId);
-            HELPER.forComponents(CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK).addStoryBoard("classic_enchanter", Scene::basic);
+            PonderSceneRegistrationHelper<ItemProviderEntry<?, ?>> entryHelper = helper.withKeyFunction(DeferredHolder::getId);
+            entryHelper.forComponents(CCBERegistry.CLASSIC_BLAZE_ENCHANTER_BLOCK)
+                    .addStoryBoard("classic_blaze_enchanter", Scene::basic, EXPERIENCE_APPLIANCES, SUPER_EXPERIENCE_APPLIANCES)
+                    .addStoryBoard("automate", Scene::automate, AllCreatePonderTags.ARM_TARGETS);
         }
     }
 }

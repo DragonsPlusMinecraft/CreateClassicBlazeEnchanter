@@ -1,4 +1,5 @@
 {
+  "_comment.unlocalized": "Remove this line after finishing localization.",
   "advancement.create_classic_blaze_enchanter.legacy_ignition": "レガシー・イグニッション！",
   "advancement.create_classic_blaze_enchanter.legacy_ignition.desc": "先の時代から来た技術だ。クラシックブレイズエンチャンターを手に入れる",
   "advancement.create_classic_blaze_enchanter.thousandfold_everchant": "千の詠唱",
@@ -6,6 +7,10 @@
   "block.create_classic_blaze_enchanter.classic_blaze_enchanter": "クラシックブレイズエンチャンター",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_target": "エンチャント:",
   "create_classic_blaze_enchanter.gui.goggles.classic_enchanting.available_targets": "利用可能なエンチャント:",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.automate.header": "Automating",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.automate.text_1": "Classic Blaze Enchanter can be automated with Mechanical Arm. It can insert item for enchanting and feed experience fuel",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.automate.text_2": "Classic Blaze Enchanter also can be automated with Belt",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.automate.text_3": "Experience fuel cannot be fed via belt",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.header": "クラシックブレイズエンチャンターの紹介",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_1": "これはクラシックブレイズエンチャンターです。エンチャントテンプレートに従ってアイテムに継続してエンチャントを施すことができます。",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_10": "スーパーエンチャントは落雷を引き起こす可能性があります",
