@@ -20,9 +20,11 @@ package plus.dragons.createclassicblazeenchanter.common.processing.enchanter;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehaviour;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
+import com.simibubi.create.foundation.utility.BlockHelper;
 import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 import dev.engine_room.flywheel.lib.transform.TransformStack;
 import java.util.List;
@@ -41,8 +43,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -103,6 +107,9 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
         advancement = new AdvancementBehaviour(this);
         behaviours.add(enchanter);
         behaviours.add(advancement);
+        behaviours.add(new DirectBeltInputBehaviour(this)
+                .onlyInsertWhen(side-> heldItem.isEmpty())
+                .setInsertionHandler(((transportedItemStack, side, simulate) -> this.insertItem(transportedItemStack.stack, simulate))));
     }
 
     @Override
@@ -203,9 +210,32 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
                     notifyUpdate();
                 }
             }
-        } else if (processingTime != -1) {
-            processingTime = -1;
-            notifyUpdate();
+        } else {
+            if (processingTime != -1) {
+                processingTime = -1;
+                notifyUpdate();
+            }
+            tryExportToBelt();
+        }
+    }
+
+    protected void tryExportToBelt(){
+        for(var side:Direction.Plane.HORIZONTAL){
+            BlockPos nextPosition = worldPosition.relative(side);
+            DirectBeltInputBehaviour directBeltInputBehaviour =
+                    BlockEntityBehaviour.get(level, nextPosition, DirectBeltInputBehaviour.TYPE);
+            if (directBeltInputBehaviour != null && directBeltInputBehaviour.canInsertFromSide(side)) {
+                ItemStack returned = directBeltInputBehaviour.handleInsertion(heldItem.copy(), side, false);
+                if (returned.isEmpty()) {
+                    heldItem = ItemStack.EMPTY;
+                    notifyUpdate();
+                    return;
+                } else if (returned.getCount() != heldItem.getCount()) {
+                    heldItem = returned.copy();
+                    notifyUpdate();
+                    return;
+                }
+            }
         }
     }
 
