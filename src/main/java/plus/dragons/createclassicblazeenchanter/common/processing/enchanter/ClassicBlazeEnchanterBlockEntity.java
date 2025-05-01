@@ -75,7 +75,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     }
 
     public LerpedFloat headAngle() {
-        return ((BlazeBlockEntity) this).headAngle;
+        return this.headAngle;
     }
 
     public @Nullable IFluidHandler getFluidHandler(@Nullable Direction side) {

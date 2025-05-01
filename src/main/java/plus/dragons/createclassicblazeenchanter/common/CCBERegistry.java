@@ -20,6 +20,7 @@ package plus.dragons.createclassicblazeenchanter.common;
 
 import static com.simibubi.create.foundation.data.TagGen.pickaxeOnly;
 import static plus.dragons.createclassicblazeenchanter.common.CCBECommon.REGISTRATE;
+import static plus.dragons.createdragonsplus.common.registry.CDPItems.BLAZE_UPGRADE_SMITHING_TEMPLATE;
 import static plus.dragons.createenchantmentindustry.common.registry.CEIBlocks.BLAZE_FORGER;
 
 import com.simibubi.create.AllTags;
@@ -89,6 +90,7 @@ public class CCBERegistry {
     public static void buildContents(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CEICreativeModeTabs.BASE.getKey()) {
             event.insertAfter(BLAZE_FORGER.asStack(), CLASSIC_BLAZE_ENCHANTER_BLOCK.asStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.insertAfter(BLAZE_UPGRADE_SMITHING_TEMPLATE.asStack(), BLAZES_ENCHANTING_HANDBOOK.asStack(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
         }
     }
 

@@ -68,7 +68,8 @@ public class ClassicBlazeEnchanterItemRenderer extends CustomRenderedItemModelRe
         poseStack.translate(0, -0.3, 0);
         poseStack.mulPose(Axis.ZP.rotationDegrees(90.0f));
         poseStack.mulPose(Axis.XP.rotationDegrees(-90.0f));
-        poseStack.scale(1.1f, 1.1f, 1.1f);
+        poseStack.translate(0, 0.05, 0);
+        poseStack.scale(1.2f, 1.2f, 1.2f);
         VertexConsumer vertexconsumer = BOOK_MATERIAL.buffer(bufferSource, RenderType::entitySolid);
         if (bookModel == null) {
             bookModel = bookModelSupplier.get();
