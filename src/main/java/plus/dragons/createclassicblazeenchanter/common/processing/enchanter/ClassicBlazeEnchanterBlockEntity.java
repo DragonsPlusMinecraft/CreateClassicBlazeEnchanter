@@ -20,6 +20,7 @@ package plus.dragons.createclassicblazeenchanter.common.processing.enchanter;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.simibubi.create.AllBlocks;
+import com.simibubi.create.content.kinetics.belt.behaviour.DirectBeltInputBehaviour;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.ValueBoxTransform;
@@ -53,7 +54,6 @@ import plus.dragons.createclassicblazeenchanter.common.CCBERegistry;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createdragonsplus.common.advancements.AdvancementBehaviour;
 import plus.dragons.createdragonsplus.common.fluids.tank.ConfigurableFluidTank;
-import plus.dragons.createdragonsplus.common.processing.blaze.BlazeBlockEntity;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.BlazeExperienceBlockEntity;
 import plus.dragons.createenchantmentindustry.common.registry.CEIFluids;
 
@@ -75,7 +75,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     }
 
     public LerpedFloat headAngle() {
-        return ((BlazeBlockEntity) this).headAngle;
+        return this.headAngle;
     }
 
     public @Nullable IFluidHandler getFluidHandler(@Nullable Direction side) {
@@ -103,6 +103,9 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
         advancement = new AdvancementBehaviour(this);
         behaviours.add(enchanter);
         behaviours.add(advancement);
+        behaviours.add(new DirectBeltInputBehaviour(this)
+                .onlyInsertWhen(side -> heldItem.isEmpty())
+                .setInsertionHandler(((transportedItemStack, side, simulate) -> this.insertItem(transportedItemStack.stack, simulate))));
     }
 
     @Override
@@ -203,9 +206,31 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
                     notifyUpdate();
                 }
             }
-        } else if (processingTime != -1) {
-            processingTime = -1;
-            notifyUpdate();
+        } else {
+            if (processingTime != -1) {
+                processingTime = -1;
+                notifyUpdate();
+            }
+            tryExport();
+        }
+    }
+
+    protected void tryExport() {
+        for (var side : Direction.Plane.HORIZONTAL) {
+            BlockPos nextPosition = worldPosition.relative(side);
+            DirectBeltInputBehaviour directBeltInputBehaviour = BlockEntityBehaviour.get(level, nextPosition, DirectBeltInputBehaviour.TYPE);
+            if (directBeltInputBehaviour != null && directBeltInputBehaviour.canInsertFromSide(side)) {
+                ItemStack returned = directBeltInputBehaviour.handleInsertion(heldItem.copy(), side, false);
+                if (returned.isEmpty()) {
+                    heldItem = ItemStack.EMPTY;
+                    notifyUpdate();
+                    return;
+                } else if (returned.getCount() != heldItem.getCount()) {
+                    heldItem = returned.copy();
+                    notifyUpdate();
+                    return;
+                }
+            }
         }
     }
 
@@ -267,7 +292,7 @@ public class ClassicBlazeEnchanterBlockEntity extends BlazeExperienceBlockEntity
     }
 
     public LerpedFloat headAnimation() {
-        return ((BlazeBlockEntity) this).headAnimation;
+        return this.headAnimation;
     }
 
     private static class EnchanterTransform extends ValueBoxTransform.Sided {

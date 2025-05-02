@@ -97,6 +97,7 @@ public class ClassicBlazeEnchanterRenderer extends BlazeBlockRenderer<ClassicBla
         ps.translate(0.0, 0.1f + Mth.sin(time * 0.1f) * 0.01, 0.0);
         ps.mulPose(Axis.YP.rotation(horizontalAngle + PI / 2));
         ps.mulPose(Axis.ZP.rotationDegrees(80.0f));
+        ps.scale(1.2f, 1.2f, 1.2f);
         float flip = Mth.lerp(partialTicks, be.oFlip, be.flip);
         float page0 = Mth.frac(flip + 0.25f) * 1.6f - 0.3f;
         float page1 = Mth.frac(flip + 0.75f) * 1.6f - 0.3f;
