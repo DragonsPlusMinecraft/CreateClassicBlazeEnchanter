@@ -1,9 +1,7 @@
-### Create: Classic Blaze Enchanter 1.1.0
+### Create: Classic Blaze Enchanter 1.1.1
 
 #### Update
-* Classic Blaze Enchanter supports direct belt input and output
-* Add Ponder for automation
-* Add Russian Translation by @Korben
+* Update Japanese Translation by @YukkuriOfuton
 
 #### Fix
-* Fix Blaze's Enchanting Handbook not show up in Creative Tab
+* Fix typos in Chinese Translation
