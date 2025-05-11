@@ -55,6 +55,7 @@ public class ClassicBlazeEnchanterRenderer extends BlazeBlockRenderer<ClassicBla
 
     @Override
     protected void renderSafe(ClassicBlazeEnchanterBlockEntity blockEntity, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int light, int overlay) {
+        EnchanterBehaviorIndicatorRenderer.renderOnBlockEntity(blockEntity, partialTicks, poseStack, bufferSource, light, overlay);
         var item = blockEntity.heldItem;
         float horizontalAngle = AngleHelper.rad(blockEntity.headAngle().getValue(partialTicks));
         renderBook(blockEntity, partialTicks, horizontalAngle, poseStack, bufferSource);
