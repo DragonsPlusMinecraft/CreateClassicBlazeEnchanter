@@ -42,6 +42,7 @@ import net.minecraft.world.item.enchantment.ItemEnchantments;
 import plus.dragons.createclassicblazeenchanter.config.CCBEConfig;
 import plus.dragons.createclassicblazeenchanter.util.CCBELang;
 import plus.dragons.createenchantmentindustry.common.fluids.experience.ExperienceHelper;
+import plus.dragons.createenchantmentindustry.common.processing.enchanter.CEIEnchantmentHelper;
 import plus.dragons.createenchantmentindustry.common.processing.enchanter.EnchantingTemplateItem;
 import plus.dragons.createenchantmentindustry.common.registry.CEIAdvancements;
 import plus.dragons.createenchantmentindustry.common.registry.CEIItems;
@@ -73,7 +74,7 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHav
             var level = stackEnchantment.getLevel(apply.enchantment);
             if (applyLevel == level) {
                 applyLevel += 1;
-                if (applyLevel > apply.enchantment.value().getMaxLevel() + 1)
+                if (applyLevel > CEIEnchantmentHelper.maxLevel(apply.enchantment) + CEIEnchantmentHelper.levelExtension(apply.enchantment))
                     applyLevel -= 1;
             }
             if (enchanter.cursed) {
@@ -86,7 +87,7 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHav
         removedEnchantments.set(apply.enchantment, 0);
         EnchantmentHelper.setEnchantments(result, removedEnchantments.toImmutable());
         result.enchant(apply.enchantment, applyLevel);
-        if (applyLevel > apply.enchantment.value().getMaxLevel()) {
+        if (applyLevel > CEIEnchantmentHelper.maxLevel(apply.enchantment)) {
             enchanter.advancement.trigger(CEIAdvancements.TRANSCENDENT_OVERCLOCK.builtinTrigger());
             enchanter.advancement.awardStat(CEIStats.SUPER_ENCHANT.get(), 1);
         }
@@ -167,7 +168,7 @@ public class ClassicEnchanterBehavior extends FilteringBehaviour implements IHav
                 MutableComponent add = Component.literal("     ").append(Enchantment.getFullname(enchantment.getKey(), enchantment.getIntValue()).copy().withStyle(style));
                 Component sign = null;
                 if (enchanter.special) {
-                    if (enchantment.getIntValue() <= enchantment.getKey().value().getMaxLevel())
+                    if (enchantment.getIntValue() <= CEIEnchantmentHelper.maxLevel(enchantment.getKey()))
                         sign = enchanter.cursed ? Component.literal(" +/-?") : Component.literal(" +");
                 }
                 if (sign != null) add = add.append(sign.copy());
