@@ -137,7 +137,7 @@ public class Scene {
         scene.idle(70);
 
         scene.overlay().showText(80)
-                .text("If the item already has an enchantment of the same type and level, Super Enchanting increases the enchantment by one level, up to one level beyond level cap")
+                .text("If the item already has an enchantment of the same type and level, Super Enchanting increases the enchantment by one level and can surpass vanilla enchantment level cap")
                 .placeNearTarget()
                 .attachKeyFrame()
                 .pointAt(util.vector().centerOf(2, 2, 1));

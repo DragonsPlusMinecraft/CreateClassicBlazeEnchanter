@@ -1,7 +1,10 @@
-### Create: Classic Blaze Enchanter 1.1.1
+### Create: Classic Blaze Enchanter 1.1.2
+
+Require Enchantment Industry 2.1.2 and Create Dragons Plus 1.5.0
 
 #### Update
-* Update Japanese Translation by @YukkuriOfuton
+* Update Blaze's Enchanting Handbook texture
+* Classic Blaze Enchanter now has a visual indicator on filter slot
 
 #### Fix
-* Fix typos in Chinese Translation
+* Fix Classic Blaze Enchanter did not respect Level Extension setting of Enchantment Industry

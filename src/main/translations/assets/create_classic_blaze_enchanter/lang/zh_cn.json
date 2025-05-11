@@ -20,7 +20,7 @@
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_5": "如果存在多个附魔可用，将随机应用其中一个",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "和烈焰人附魔室一样，经典烈焰人附魔室需要附魔蛋糕来进入超越附魔模式",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "超越附魔模式下的经典烈焰人附魔室只可使用超越附魔模板",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "如果物品上已有同种同级附魔，超越附魔会将附魔提升一级，最高提升到到超过附魔等级上限一级",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "如果物品上已有同种同级附魔，超越附魔会将附魔提升一级，而且能突破原版附魔等级上限",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "确保附近放置有避雷针",
   "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "烈焰人附魔实用手册",
   "stat.create_classic_blaze_enchanter.classic_enchant": "经典烈焰人附魔室工作次数"

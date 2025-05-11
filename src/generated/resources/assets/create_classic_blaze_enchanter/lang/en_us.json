@@ -20,7 +20,7 @@
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_5": "If multiple enchantments are applicable, random one will be applied",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_6": "Classic Blaze Enchanter enters Super Enchanting mode in same way as Blaze Enchanter, requiring Cake O' Enchanting",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_7": "Classic Blaze Enchanter in Super Enchanting mode exclusively requires Super Enchanting Templates",
-  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "If the item already has an enchantment of the same type and level, Super Enchanting increases the enchantment by one level, up to one level beyond level cap",
+  "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_8": "If the item already has an enchantment of the same type and level, Super Enchanting increases the enchantment by one level and can surpass vanilla enchantment level cap",
   "create_classic_blaze_enchanter.ponder.classic_blaze_enchanter.intro.text_9": "Make sure to place a Lightning Rod nearby",
   "item.create_classic_blaze_enchanter.blazes_enchanting_handbook": "Blaze's Enchanting Handbook",
   "stat.create_classic_blaze_enchanter.classic_enchant": "Classic Blaze Enchanter Used"
