@@ -1,4 +1,3 @@
-### Create: Classic Blaze Enchanter 1.1.3
+### Create: Classic Blaze Enchanter 1.1.4
 
-#### Update
-* Update Japanese Translation by @YukkuriOfuton
+Update for Create 6.0.6
