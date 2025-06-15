@@ -77,7 +77,6 @@ public class ClassicEnchanterBlockVisual extends AbstractBlockEntityVisual<Class
         // Update head and rods
         if (active != this.active || heatLevel != this.heatLevel) {
             this.active = active;
-            this.heatLevel = heatLevel;
 
             PartialModel blazeModel = BlazeBurnerRenderer.getBlazeModel(heatLevel, active);
             instancerProvider()
@@ -109,6 +108,8 @@ public class ClassicEnchanterBlockVisual extends AbstractBlockEntityVisual<Class
                 smallRods = null;
                 largeRods = null;
             }
+
+            this.heatLevel = heatLevel;
         }
         // Update flame
         if (active && flame == null) {

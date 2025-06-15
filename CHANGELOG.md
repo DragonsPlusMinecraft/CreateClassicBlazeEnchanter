@@ -1,3 +1,4 @@
-### Create: Classic Blaze Enchanter 1.1.4
+## Create: Classic Blaze Enchanter 1.1.5
 
-Update for Create 6.0.6
+### Fix
+- Fix Classic Blaze Enchanter does not render rods correctly.
